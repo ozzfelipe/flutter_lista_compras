@@ -1,4 +1,4 @@
-# Listinha
+# Lista de compras
 
 Aplicativo para criar várias listas para serem usadas simultaneamente e sincronizadas na nuvem após os dados serem salvos localmente (**Offline-first**).
 
