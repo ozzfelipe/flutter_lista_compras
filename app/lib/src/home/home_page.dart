@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:lista_de_compras/src/home/widgets/custom_drawer.dart';
 
 import '../shared/widgets/user_image_button.dart';
@@ -46,7 +47,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
+        onPressed: () => Modular.to.pushNamed('./newTask'),
         icon: const Icon(Icons.edit),
         label: const Text('Nova lista'),
       ),
