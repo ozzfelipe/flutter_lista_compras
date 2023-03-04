@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:lista_de_compras/src/shared/view_models/app_view_model/app_intent.dart';
 
+import '../shared/domain/app/presentation/app_intent.dart';
+import '../shared/domain/app/presentation/app_view_model.dart';
 import '../shared/themes/extensions/theme_mode_extension.dart';
-import '../shared/view_models/app_view_model/app_view_model.dart';
 
 class ConfigurationPage extends StatefulWidget {
   const ConfigurationPage({super.key});

@@ -41,6 +41,7 @@ dependencies:
   flutter_modular: ^5.0.3
   realm: ^1.0.2
   modular_test: ^2.0.0
+  rxdart: ^0.27.7
 
 dev_dependencies:
   flutter_test:
@@ -53,6 +54,7 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
   mocktail: ^0.3.0
+  build_runner: ^2.3.3
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
