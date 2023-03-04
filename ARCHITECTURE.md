@@ -49,6 +49,7 @@ Pontos a serem levados em consideração antes de introduzir uma nova feature:
 
 - flutter_modular: Modularização de rotas e injeção de dependências.
 - realm: Base de dados local.
+- rxdart: Reatividade.
 
 # Package externos (Backend)
 
