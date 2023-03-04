@@ -1,0 +1,1 @@
+class EmptySyncDateException implements Exception {}

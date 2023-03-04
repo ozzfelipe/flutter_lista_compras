@@ -11,3 +11,7 @@ class SetThemeModeIntent extends AppIntent {
   final ThemeMode themeMode;
   SetThemeModeIntent(this.themeMode) : super._();
 }
+
+class GetLastSyncDateIntent extends AppIntent {
+  GetLastSyncDateIntent() : super._();
+}
