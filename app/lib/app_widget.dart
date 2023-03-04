@@ -21,6 +21,10 @@ class _AppWidgetState extends State<AppWidget> {
     return StreamBuilder<AppThemeState>(
       stream: appViewModel.appThemeController.stream,
       builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Container();
+        }
+
         return MaterialApp.router(
           title: 'Lista de Compras',
           debugShowCheckedModeBanner: false,
