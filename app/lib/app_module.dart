@@ -7,8 +7,8 @@ import 'package:lista_de_compras/src/shared/domain/app/data/local/get_last_sync_
 import 'package:lista_de_compras/src/shared/domain/app/data/local/get_theme_mode_local.dart';
 import 'package:lista_de_compras/src/shared/domain/app/data/local/save_theme_mode_local.dart';
 import 'package:lista_de_compras/src/shared/domain/app/presentation/app_view_model.dart';
-import 'package:lista_de_compras/src/shared/domain/app/presentation/sync_date_mapper.dart';
-import 'package:lista_de_compras/src/shared/domain/app/presentation/sync_date_state_mapper.dart';
+import 'package:lista_de_compras/src/shared/domain/app/presentation/mappers/sync_date_presentation_mapper.dart';
+import 'package:lista_de_compras/src/shared/domain/app/presentation/mappers/sync_date_state_mapper.dart';
 import 'package:lista_de_compras/src/shared/domain/app/presentation/usecases/get_last_sync_date.dart';
 import 'package:lista_de_compras/src/shared/domain/app/presentation/usecases/get_last_sync_date_source.dart';
 import 'package:lista_de_compras/src/shared/domain/app/presentation/usecases/get_theme_mode.dart';

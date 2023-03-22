@@ -1,0 +1,1 @@
+class AppIntentNotImplementdException implements Exception {}

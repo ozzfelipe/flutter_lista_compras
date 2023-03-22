@@ -7,6 +7,16 @@ class AppThemeState {
   // factory AppThemeState.system() => SystemThemeState();
   // factory AppThemeState.dark() => DarkThemeState();
   // factory AppThemeState.ligth() => LigthThemeState();
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+
+    return other is AppThemeState && other.themeMode == themeMode;
+  }
+
+  @override
+  int get hashCode => themeMode.hashCode;
 }
 
 // class SystemThemeState extends AppThemeState {
