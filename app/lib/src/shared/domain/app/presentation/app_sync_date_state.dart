@@ -9,8 +9,8 @@ class AppSyncDateState {
 }
 
 class SuccessSyncDateState extends AppSyncDateState {
-  SyncDatePresentation syncDate;
-  SuccessSyncDateState(this.syncDate) : super._();
+  SyncDatePresentation syncDatePresentation;
+  SuccessSyncDateState(this.syncDatePresentation) : super._();
 }
 
 class EmptySyncDateState extends AppSyncDateState {
