@@ -13,7 +13,7 @@ import 'package:modular_test/modular_test.dart';
 
 void main() {
   initModules([AppModule(), HomeModule()]);
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('open app widget test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const AppWidget());
   });
