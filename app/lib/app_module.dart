@@ -15,6 +15,7 @@ import 'package:lista_de_compras/src/shared/domain/app/presentation/usecases/get
 import 'package:lista_de_compras/src/shared/domain/app/presentation/usecases/get_theme_mode_source.dart';
 import 'package:lista_de_compras/src/shared/domain/app/presentation/usecases/save_theme_mode.dart';
 import 'package:lista_de_compras/src/shared/domain/app/presentation/usecases/save_theme_mode_source.dart';
+import 'package:lista_de_compras/src/shared/routes/routes.dart';
 import 'package:lista_de_compras/src/shared/services/realm/realm_config.dart';
 import 'package:realm/realm.dart';
 
@@ -38,7 +39,7 @@ class AppModule extends Module {
   List<ModularRoute> get routes => [
         ModuleRoute('/', module: HomeModule()),
         ChildRoute(
-          '/config',
+          '/${Routes.configuration}',
           child: (context, args) => const ConfigurationPage(),
         )
       ];

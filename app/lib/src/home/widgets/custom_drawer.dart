@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:lista_de_compras/src/shared/domain/app/presentation/app_view_model.dart';
+import 'package:lista_de_compras/src/shared/routes/routes.dart';
 
 import '../../shared/domain/app/presentation/app_sync_date_state.dart';
 
@@ -18,7 +19,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
   Widget build(BuildContext context) {
     return NavigationDrawer(
       onDestinationSelected: (index) {
-        if (index == 1) Modular.to.popAndPushNamed('./config');
+        if (index == 1) Modular.to.popAndPushNamed('./${Routes.configuration}');
       },
       children: [
         Padding(
