@@ -1,0 +1,21 @@
+workflows:
+  android-workflow:
+    name: Android Workflow
+    max_build_duration: 120
+    environment:
+      flutter: stable
+      xcode: latest
+    scripts:
+      - name: Set up local.properties
+        script: echo "flutter.sdk=$HOME/programs/flutter" > "$CM_BUILD_DIR/android/local.properties"
+      - name: Update version pubspec.yaml
+        script: |
+          chmod +x scripts/update_version.sh
+          ./scripts/update_version.sh
+      - name: Build AAB with Flutter
+        script: |
+          flutter build appbundle --release
+    artifacts:
+      - build/**/outputs/**/*.aab
+      - build/**/outputs/**/mapping.txt
+      - flutter_drive.log
