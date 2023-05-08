@@ -3,7 +3,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 import '../shared/domain/app/presentation/app_intent.dart';
 import '../shared/domain/app/presentation/app_view_model.dart';
-import '../shared/themes/extensions/theme_mode_extension.dart';
+import '../shared/utils/themes/extensions/theme_mode_extension.dart';
 
 class ConfigurationPage extends StatefulWidget {
   const ConfigurationPage({super.key});

@@ -1,4 +1,4 @@
-part of '../../../app_widget.dart';
+part of '../../../../app_widget.dart';
 
 ThemeData get _lightThemeData => ThemeData(
       colorScheme: _lightColorScheme,

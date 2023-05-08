@@ -17,16 +17,13 @@ class TaskBoardList extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.primary,
       foregroundColor: Theme.of(context).colorScheme.primary,
     );
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: ListView.separated(
-        padding: const EdgeInsets.fromLTRB(20, 80, 20, 100),
-        itemBuilder: (_, index) {
-          return TaskCard(taskCard: taskCard);
-        },
-        separatorBuilder: (_, index) => const SizedBox(height: 24),
-        itemCount: 10,
-      ),
+    return ListView.separated(
+      padding: const EdgeInsets.fromLTRB(28, 88, 28, 116),
+      itemBuilder: (_, index) {
+        return TaskCard(taskCard: taskCard);
+      },
+      separatorBuilder: (_, index) => const SizedBox(height: 24),
+      itemCount: 10,
     );
   }
 }

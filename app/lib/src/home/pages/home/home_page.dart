@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:lista_de_compras/src/home/widgets/custom_drawer.dart';
 import 'package:lista_de_compras/src/home/widgets/task_board.dart';
-import 'package:lista_de_compras/src/shared/routes/routes.dart';
+import 'package:lista_de_compras/src/shared/utils/routes/routes.dart';
 
 import '../../../shared/widgets/user_image_button.dart';
 

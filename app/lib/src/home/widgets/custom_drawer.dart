@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:lista_de_compras/src/shared/domain/app/presentation/app_view_model.dart';
-import 'package:lista_de_compras/src/shared/routes/routes.dart';
+import 'package:lista_de_compras/src/shared/utils/routes/routes.dart';
 
 import '../../shared/domain/app/presentation/app_sync_date_state.dart';
 
