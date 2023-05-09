@@ -3,7 +3,7 @@ import 'package:result_dart/result_dart.dart';
 
 import '../../../../shared/services/realm/models/task_model.dart';
 
-abstract class TaskBoardListSource {
+abstract class ITaskBoardListSource {
   /// get all task boards
   Result<List<TaskBoard>, TaskBoardException> getTaskBoards();
 }
