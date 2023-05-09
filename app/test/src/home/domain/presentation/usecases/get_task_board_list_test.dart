@@ -1,16 +1,16 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lista_de_compras/src/home/domain/presentation/exceptions/task_board_exceptions.dart';
-import 'package:lista_de_compras/src/home/domain/presentation/usecases/get_task_board_list_source.dart';
 import 'package:lista_de_compras/src/home/domain/presentation/usecases/get_task_board_list_usecase.dart';
+import 'package:lista_de_compras/src/home/domain/presentation/usecases/task_board_list_source_interface.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:result_dart/result_dart.dart';
 
 import '../../mocks/task_board_list_mock.dart';
 
-class TaskBoardListSourceMock extends Mock implements TaskBoardListSource {}
+class TaskBoardListSourceMock extends Mock implements ITaskBoardListSource {}
 
 void main() {
-  late final TaskBoardListSource source;
+  late final ITaskBoardListSource source;
   late final GetTaskBoardList sut;
 
   setUpAll(() {
