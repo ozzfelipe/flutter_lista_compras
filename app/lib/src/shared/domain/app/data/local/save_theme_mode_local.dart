@@ -1,4 +1,4 @@
-import 'package:flutter/src/material/app.dart';
+import 'package:flutter/material.dart';
 import 'package:lista_de_compras/src/shared/domain/app/presentation/usecases/save_theme_mode_source.dart';
 
 import '../../../../data/local/configuration_service_local_interface.dart';

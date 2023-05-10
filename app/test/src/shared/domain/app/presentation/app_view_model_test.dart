@@ -105,7 +105,7 @@ void main() {
       });
       test('should throw a NotImplementedIntent exception', () {
         expect(() => sut.handleIntent(NotImplementedIntent()),
-            throwsA(isA<AppIntentNotImplementdException>()));
+            throwsA(isA<IntentNotImplementdException>()));
       });
     });
   });

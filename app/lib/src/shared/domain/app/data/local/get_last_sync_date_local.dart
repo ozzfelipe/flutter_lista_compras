@@ -1,7 +1,7 @@
 import 'package:lista_de_compras/src/shared/data/local/configuration_service_local_interface.dart';
 import 'package:lista_de_compras/src/shared/domain/app/data/local/exceptions.dart';
 import 'package:lista_de_compras/src/shared/domain/app/presentation/usecases/get_last_sync_date_source.dart';
-import 'package:result_dart/src/result.dart';
+import 'package:result_dart/result_dart.dart';
 
 class GetLastSyncDateLocal extends GetLastSyncDateSource {
   final IConfigurationServiceLocal _service;

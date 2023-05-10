@@ -44,7 +44,7 @@ class AppViewModel extends Disposable {
       return;
     }
 
-    throw AppIntentNotImplementdException();
+    throw IntentNotImplementdException();
   }
 
   void _setThemMode(ThemeMode themeMode) {
