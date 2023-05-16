@@ -1,6 +1,6 @@
 import '../../domain/presentation/task_board_list_presentation.dart';
 
-class TaskBoardListState {
+sealed class TaskBoardListState {
   TaskBoardListState._();
 
   factory TaskBoardListState.loading() => LoadingTaskBoardListState();

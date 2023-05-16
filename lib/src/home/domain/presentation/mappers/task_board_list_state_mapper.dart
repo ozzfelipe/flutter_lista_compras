@@ -6,7 +6,7 @@ import '../../../pages/home/home_state.dart';
 import '../exceptions/task_board_exceptions.dart';
 import '../task_board_presentation.dart';
 
-class TaskBoardListStateMapper {
+final class TaskBoardListStateMapper {
   TaskBoardListState call(Result<List<TaskBoard>, TaskBoardException> result) {
     return result.fold((success) {
       if (success.isEmpty) {

@@ -7,6 +7,7 @@ import 'package:lista_de_compras/src/shared/domain/app/presentation/app_view_mod
 import 'package:lista_de_compras/src/shared/domain/app/presentation/exceptions/exceptions.dart';
 import 'package:lista_de_compras/src/shared/domain/app/presentation/mappers/sync_date_presentation_mapper.dart';
 import 'package:lista_de_compras/src/shared/domain/app/presentation/mappers/sync_date_state_mapper.dart';
+import 'package:lista_de_compras/src/shared/domain/app/presentation/mappers/theme_mode_state_mapper.dart';
 import 'package:lista_de_compras/src/shared/domain/app/presentation/usecases/get_last_sync_date.dart';
 import 'package:lista_de_compras/src/shared/domain/app/presentation/usecases/get_theme_mode.dart';
 import 'package:lista_de_compras/src/shared/domain/app/presentation/usecases/save_theme_mode.dart';
@@ -38,6 +39,7 @@ void main() {
       getThemeMode,
       SyncDateStateMapper(SyncDatePresentationMapper()),
       getLastSyncDate,
+      ThemeModeStateMapper(),
     );
   });
 
@@ -50,20 +52,20 @@ void main() {
       test('should emit app theme state', () {
         expect(
           sut.appThemeController.stream,
-          emits(AppThemeState(ThemeMode.system)),
+          emits(isA<SystemThemeState>()),
         );
       });
       test('should update theme mode', () {
         expect(
           sut.appThemeController.stream,
-          emits(AppThemeState(ThemeMode.system)),
+          emits(isA<SystemThemeState>()),
         );
 
         sut.handleIntent(SetThemeModeIntent(ThemeMode.dark));
 
         expect(
           sut.appThemeController.stream,
-          emits(AppThemeState(ThemeMode.dark)),
+          emits(isA<DarkThemeState>()),
         );
 
         var verifyResult = verify(() => saveThemeMode(captureAny()));

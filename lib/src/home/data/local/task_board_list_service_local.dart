@@ -4,7 +4,7 @@ import 'package:realm/realm.dart';
 import '../../../shared/services/realm/models/task_model.dart';
 import '../../domain/presentation/exceptions/task_board_exceptions.dart';
 
-class TaskBoardServicelocal extends ITaskBoardServiceLocal {
+final class TaskBoardServicelocal extends ITaskBoardServiceLocal {
   final Realm _realm;
 
   TaskBoardServicelocal(this._realm);

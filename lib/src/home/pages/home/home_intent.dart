@@ -1,4 +1,4 @@
-class HomeIntent {
+sealed class HomeIntent {
   HomeIntent._();
 
   factory HomeIntent.getAllTaskBoardList() => GetAllTaskBoardListIntent();

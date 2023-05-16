@@ -19,7 +19,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
   Widget build(BuildContext context) {
     return NavigationDrawer(
       onDestinationSelected: (index) {
-        if (index == 1) Modular.to.popAndPushNamed('./${Routes.configuration}');
+        if (index == 1) Modular.to.popAndPushNamed('.${Routes.configuration}');
       },
       children: [
         Padding(

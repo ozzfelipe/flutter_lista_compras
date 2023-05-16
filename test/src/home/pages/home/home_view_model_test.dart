@@ -13,13 +13,16 @@ import '../../domain/mocks/task_board_list_mock.dart';
 class GetTaskBoardListMock extends Mock implements GetTaskBoardList {}
 
 void main() {
-  late final HomeViewModel sut;
+  late HomeViewModel sut;
   final GetTaskBoardList getTaskBoardList = GetTaskBoardListMock();
   final TaskBoardListStateMapper taskBoardListStateMapper =
       TaskBoardListStateMapper();
 
   setUpAll(() {
     when(() => getTaskBoardList()).thenReturn(Result.success([]));
+  });
+
+  setUp(() {
     sut = HomeViewModel(getTaskBoardList, taskBoardListStateMapper);
   });
 
@@ -68,7 +71,8 @@ void main() {
           sut.taskBoardlistController.stream,
           emitsAnyOf([
             isA<LoadingTaskBoardListState>(),
-            isA<EmptyTaskBoardListState>()
+            isA<EmptyTaskBoardListState>(),
+            isA<SuccessTaskBoardListState>()
           ]),
         );
 

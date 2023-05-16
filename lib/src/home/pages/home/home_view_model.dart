@@ -7,7 +7,7 @@ import '../../domain/presentation/usecases/get_task_board_list_usecase.dart';
 import 'home_intent.dart';
 import 'home_state.dart';
 
-class HomeViewModel implements Disposable {
+class HomeViewModel extends Disposable {
   final GetTaskBoardList _getTaskBoardList;
   final TaskBoardListStateMapper _taskBoardListMapper;
   final BehaviorSubject<TaskBoardListState> taskBoardlistController =

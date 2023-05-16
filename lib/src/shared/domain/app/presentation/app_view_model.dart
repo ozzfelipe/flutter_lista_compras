@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:lista_de_compras/src/shared/domain/app/presentation/mappers/sync_date_state_mapper.dart';
+import 'package:lista_de_compras/src/shared/domain/app/presentation/mappers/theme_mode_state_mapper.dart';
 import 'package:lista_de_compras/src/shared/domain/app/presentation/usecases/get_last_sync_date.dart';
 import 'package:lista_de_compras/src/shared/domain/app/presentation/usecases/get_theme_mode.dart';
 import 'package:lista_de_compras/src/shared/domain/app/presentation/usecases/save_theme_mode.dart';
@@ -15,10 +16,16 @@ class AppViewModel extends Disposable {
   final SaveThemeMode _saveThemeMode;
   final GetThemeMode _getThemeMode;
   final SyncDateStateMapper _syncDateStateMapper;
+  final ThemeModeStateMapper _themeModeStateMapper;
   final GetLastSyncDate _getLastSyncDate;
 
-  AppViewModel(this._saveThemeMode, this._getThemeMode,
-      this._syncDateStateMapper, this._getLastSyncDate) {
+  AppViewModel(
+    this._saveThemeMode,
+    this._getThemeMode,
+    this._syncDateStateMapper,
+    this._getLastSyncDate,
+    this._themeModeStateMapper,
+  ) {
     _init();
   }
 
@@ -28,7 +35,7 @@ class AppViewModel extends Disposable {
 
   _init() {
     var res = _getThemeMode();
-    appThemeController = BehaviorSubject.seeded(AppThemeState(res));
+    appThemeController = BehaviorSubject.seeded(_themeModeStateMapper(res));
 
     handleIntent(GetLastSyncDateIntent());
   }
@@ -48,7 +55,7 @@ class AppViewModel extends Disposable {
   }
 
   void _setThemMode(ThemeMode themeMode) {
-    appThemeController.sink.add(AppThemeState(themeMode));
+    appThemeController.sink.add(_themeModeStateMapper(themeMode));
     _saveTheme(themeMode);
   }
 

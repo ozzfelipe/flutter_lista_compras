@@ -9,6 +9,7 @@ import 'package:lista_de_compras/src/shared/domain/app/data/local/save_theme_mod
 import 'package:lista_de_compras/src/shared/domain/app/presentation/app_view_model.dart';
 import 'package:lista_de_compras/src/shared/domain/app/presentation/mappers/sync_date_presentation_mapper.dart';
 import 'package:lista_de_compras/src/shared/domain/app/presentation/mappers/sync_date_state_mapper.dart';
+import 'package:lista_de_compras/src/shared/domain/app/presentation/mappers/theme_mode_state_mapper.dart';
 import 'package:lista_de_compras/src/shared/domain/app/presentation/usecases/get_last_sync_date.dart';
 import 'package:lista_de_compras/src/shared/domain/app/presentation/usecases/get_last_sync_date_source.dart';
 import 'package:lista_de_compras/src/shared/domain/app/presentation/usecases/get_theme_mode.dart';
@@ -22,24 +23,25 @@ import 'package:realm/realm.dart';
 class AppModule extends Module {
   @override
   List<Bind<Object>> get binds => [
-        Bind.instance<Realm>(Realm(realmConfig)),
-        Bind.factory((i) => SyncDatePresentationMapper()),
-        Bind.factory((i) => SyncDateStateMapper(i())),
-        Bind.singleton<IConfigurationServiceLocal>(
-            (i) => ConfigurationServiceLocal(i())),
-        Bind.factory<SaveThemeModeSource>((i) => SaveThemeModeLocal(i())),
-        Bind.factory<GetThemeModeSource>((i) => GetThemeModeLocal(i())),
-        Bind.factory<GetLastSyncDateSource>((i) => GetLastSyncDateLocal(i())),
-        Bind.factory((i) => GetLastSyncDate(i())),
-        Bind.factory((i) => GetThemeMode(i())),
-        Bind.factory((i) => SaveThemeMode(i())),
-        Bind.singleton((i) => AppViewModel(i(), i(), i(), i())),
+        AutoBind.instance<Realm>(Realm(realmConfig)),
+        AutoBind.factory(SyncDatePresentationMapper.new),
+        AutoBind.factory(SyncDateStateMapper.new),
+        AutoBind.factory(ThemeModeStateMapper.new),
+        AutoBind.singleton<IConfigurationServiceLocal>(
+            ConfigurationServiceLocal.new),
+        AutoBind.factory<SaveThemeModeSource>(SaveThemeModeLocal.new),
+        AutoBind.factory<GetThemeModeSource>(GetThemeModeLocal.new),
+        AutoBind.factory<GetLastSyncDateSource>(GetLastSyncDateLocal.new),
+        AutoBind.factory(GetLastSyncDate.new),
+        AutoBind.factory(GetThemeMode.new),
+        AutoBind.factory(SaveThemeMode.new),
+        AutoBind.singleton(AppViewModel.new),
       ];
   @override
   List<ModularRoute> get routes => [
         ModuleRoute('/', module: HomeModule()),
         ChildRoute(
-          '/${Routes.configuration}',
+          Routes.configuration,
           child: (context, args) => const ConfigurationPage(),
         )
       ];

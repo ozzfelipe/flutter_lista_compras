@@ -14,13 +14,12 @@ import 'domain/presentation/usecases/task_board_list_source_interface.dart';
 class HomeModule extends Module {
   @override
   List<Bind<Object>> get binds => [
-        Bind.lazySingleton<ITaskBoardServiceLocal>(
-            (i) => TaskBoardServicelocal(i())),
-        Bind.lazySingleton<ITaskBoardListSource>(
-            (i) => TaskBoardListLocal(i())),
-        Bind.lazySingleton((i) => GetTaskBoardList(i())),
-        Bind.lazySingleton(
-            (i) => HomeViewModel(i(), TaskBoardListStateMapper())),
+        AutoBind.lazySingleton<ITaskBoardServiceLocal>(
+            TaskBoardServicelocal.new),
+        AutoBind.lazySingleton<ITaskBoardListSource>(TaskBoardListLocal.new),
+        AutoBind.lazySingleton(GetTaskBoardList.new),
+        AutoBind.lazySingleton(TaskBoardListStateMapper.new),
+        AutoBind.lazySingleton(HomeViewModel.new),
       ];
 
   @override
