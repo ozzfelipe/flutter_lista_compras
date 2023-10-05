@@ -1,4 +1,4 @@
-package com.santos.flutter.app
+package com.santos.flutter.publicacaoteste
 
 import io.flutter.embedding.android.FlutterActivity
 

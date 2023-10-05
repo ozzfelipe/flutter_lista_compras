@@ -33,6 +33,7 @@ class AppModule extends Module {
     i.add<GetLastSyncDateSource>(GetLastSyncDateLocal.new);
     i.add(GetLastSyncDate.new);
     i.add(GetThemeMode.new);
+
     i.add(SaveThemeMode.new);
     i.addSingleton(AppViewModel.new);
     super.binds(i);

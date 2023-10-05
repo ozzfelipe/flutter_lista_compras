@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.santos.flutter.app">
+    package="com.santos.flutter.publicacaoteste">
    <application
         android:label="lista"
         android:name="${applicationName}"
