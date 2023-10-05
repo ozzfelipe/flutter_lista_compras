@@ -34,11 +34,11 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.5
-  uno: ^1.1.8
-  result_dart: ^1.0.6
-  flutter_modular: ^6.0.0-alpha.5
-  realm: ^1.0.3
+  cupertino_icons: ^1.0.6
+  uno: ^1.1.9
+  result_dart: ^1.1.0
+  flutter_modular: ^6.3.2
+  realm: ^1.5.0
   # modular_test: ^2.0.0
   rxdart: ^0.27.7
   intl: ^0.18.1

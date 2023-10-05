@@ -24,7 +24,7 @@ class TaskBoardPresentation {
     return TaskBoardPresentation(
       status: _getStatus(taskBoard),
       title: taskBoard.title,
-      tasks: taskBoard.tasks,
+      tasks: taskBoard.tasks.toList(),
       progress: _getProgess(taskBoard),
       progressPercentText: _getProgessPercentText(taskBoard),
       progressText: _getProgessText(taskBoard),
@@ -68,27 +68,17 @@ class TaskBoardPresentation {
 }
 
 extension TaskBoardPresentationHelper on TaskBoardPresentation {
-  Color getBackgroundColor(BuildContext context) {
-    var theme = Theme.of(context);
-    switch (status) {
-      case TaskBoardStatus.pending:
-        return theme.colorScheme.primaryContainer;
-      case TaskBoardStatus.completed:
-        return theme.colorScheme.tertiaryContainer;
-      case TaskBoardStatus.disabled:
-        return theme.colorScheme.errorContainer;
-    }
-  }
+  Color getBackgroundColor(BuildContext context) => switch (status) {
+        TaskBoardStatus.pending => _colorScheme(context).primaryContainer,
+        TaskBoardStatus.completed => _colorScheme(context).tertiaryContainer,
+        TaskBoardStatus.disabled => _colorScheme(context).errorContainer,
+      };
 
-  Color getForegroundColor(BuildContext context) {
-    var theme = Theme.of(context);
-    switch (status) {
-      case TaskBoardStatus.pending:
-        return theme.colorScheme.primary;
-      case TaskBoardStatus.completed:
-        return theme.colorScheme.tertiary;
-      case TaskBoardStatus.disabled:
-        return theme.colorScheme.error;
-    }
-  }
+  Color getForegroundColor(BuildContext context) => switch (status) {
+        TaskBoardStatus.pending => _colorScheme(context).primary,
+        TaskBoardStatus.completed => _colorScheme(context).tertiary,
+        TaskBoardStatus.disabled => _colorScheme(context).error,
+      };
+
+  ColorScheme _colorScheme(context) => Theme.of(context).colorScheme;
 }

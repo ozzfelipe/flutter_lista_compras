@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lista_de_compras/src/home/domain/presentation/enums/task_board_status.dart';
 
 import '../domain/presentation/task_board_presentation.dart';
 
@@ -51,8 +50,7 @@ class TaskBoardView extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              if (taskBoard.status != TaskBoardStatus.pending &&
-                  taskBoard.tasks.isNotEmpty)
+              if (taskBoard.tasks.isNotEmpty)
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

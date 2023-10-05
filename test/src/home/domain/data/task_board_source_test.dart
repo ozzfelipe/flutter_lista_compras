@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lista_de_compras/src/home/data/local/task_board_list_service_interface.dart';
+import 'package:lista_de_compras/src/home/domain/data/local/task_board_list_source_interface.dart';
 import 'package:lista_de_compras/src/home/domain/data/local/task_board_source_local.dart';
 import 'package:lista_de_compras/src/home/domain/presentation/exceptions/task_board_exceptions.dart';
-import 'package:lista_de_compras/src/home/domain/presentation/usecases/task_board_list_source_interface.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../mocks/task_board_list_mock.dart';

@@ -22,27 +22,29 @@ import 'package:realm/realm.dart';
 
 class AppModule extends Module {
   @override
-  List<Bind<Object>> get binds => [
-        AutoBind.instance<Realm>(Realm(realmConfig)),
-        AutoBind.factory(SyncDatePresentationMapper.new),
-        AutoBind.factory(SyncDateStateMapper.new),
-        AutoBind.factory(ThemeModeStateMapper.new),
-        AutoBind.singleton<IConfigurationServiceLocal>(
-            ConfigurationServiceLocal.new),
-        AutoBind.factory<SaveThemeModeSource>(SaveThemeModeLocal.new),
-        AutoBind.factory<GetThemeModeSource>(GetThemeModeLocal.new),
-        AutoBind.factory<GetLastSyncDateSource>(GetLastSyncDateLocal.new),
-        AutoBind.factory(GetLastSyncDate.new),
-        AutoBind.factory(GetThemeMode.new),
-        AutoBind.factory(SaveThemeMode.new),
-        AutoBind.singleton(AppViewModel.new),
-      ];
+  void binds(Injector i) {
+    i.addInstance<Realm>(Realm(realmConfig));
+    i.add(SyncDatePresentationMapper.new);
+    i.add(SyncDateStateMapper.new);
+    i.add(ThemeModeStateMapper.new);
+    i.addSingleton<IConfigurationServiceLocal>(ConfigurationServiceLocal.new);
+    i.add<SaveThemeModeSource>(SaveThemeModeLocal.new);
+    i.add<GetThemeModeSource>(GetThemeModeLocal.new);
+    i.add<GetLastSyncDateSource>(GetLastSyncDateLocal.new);
+    i.add(GetLastSyncDate.new);
+    i.add(GetThemeMode.new);
+    i.add(SaveThemeMode.new);
+    i.addSingleton(AppViewModel.new);
+    super.binds(i);
+  }
+
   @override
-  List<ModularRoute> get routes => [
-        ModuleRoute('/', module: HomeModule()),
-        ChildRoute(
-          Routes.configuration,
-          child: (context, args) => const ConfigurationPage(),
-        )
-      ];
+  void routes(RouteManager r) {
+    r.module('/', module: HomeModule());
+    r.child(
+      Routes.configuration,
+      child: (context) => const ConfigurationPage(),
+    );
+    super.routes(r);
+  }
 }
